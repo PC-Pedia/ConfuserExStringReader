@@ -40,14 +40,18 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.chkIgnoreEmpty = new System.Windows.Forms.CheckBox();
+			this.numPacks = new System.Windows.Forms.NumericUpDown();
+			this.label6 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numPacks)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnSelectFile
 			// 
-			this.btnSelectFile.Location = new System.Drawing.Point(444, 30);
+			this.btnSelectFile.Location = new System.Drawing.Point(592, 37);
+			this.btnSelectFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.btnSelectFile.Name = "btnSelectFile";
-			this.btnSelectFile.Size = new System.Drawing.Size(93, 23);
+			this.btnSelectFile.Size = new System.Drawing.Size(124, 28);
 			this.btnSelectFile.TabIndex = 0;
 			this.btnSelectFile.Text = "Select Assembly";
 			this.btnSelectFile.UseVisualStyleBackColor = true;
@@ -55,16 +59,18 @@
 			// 
 			// txtAssembly
 			// 
-			this.txtAssembly.Location = new System.Drawing.Point(6, 32);
+			this.txtAssembly.Location = new System.Drawing.Point(8, 39);
+			this.txtAssembly.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtAssembly.Name = "txtAssembly";
-			this.txtAssembly.Size = new System.Drawing.Size(432, 20);
+			this.txtAssembly.Size = new System.Drawing.Size(575, 22);
 			this.txtAssembly.TabIndex = 1;
 			// 
 			// btnRead
 			// 
-			this.btnRead.Location = new System.Drawing.Point(456, 156);
+			this.btnRead.Location = new System.Drawing.Point(608, 192);
+			this.btnRead.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.btnRead.Name = "btnRead";
-			this.btnRead.Size = new System.Drawing.Size(90, 30);
+			this.btnRead.Size = new System.Drawing.Size(120, 37);
 			this.btnRead.TabIndex = 2;
 			this.btnRead.Text = "Read Strings";
 			this.btnRead.UseVisualStyleBackColor = true;
@@ -72,60 +78,67 @@
 			// 
 			// txtClassName
 			// 
-			this.txtClassName.Location = new System.Drawing.Point(6, 106);
+			this.txtClassName.Location = new System.Drawing.Point(8, 130);
+			this.txtClassName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtClassName.Name = "txtClassName";
-			this.txtClassName.Size = new System.Drawing.Size(207, 20);
+			this.txtClassName.Size = new System.Drawing.Size(275, 22);
 			this.txtClassName.TabIndex = 3;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 16);
+			this.label1.Location = new System.Drawing.Point(8, 20);
+			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(73, 13);
+			this.label1.Size = new System.Drawing.Size(98, 17);
 			this.label1.TabIndex = 4;
 			this.label1.Text = "Assembly File:";
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(6, 77);
+			this.label2.Location = new System.Drawing.Point(8, 95);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(182, 13);
+			this.label2.Size = new System.Drawing.Size(244, 17);
 			this.label2.TabIndex = 5;
 			this.label2.Text = "Main string decryption class full name";
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(6, 90);
+			this.label3.Location = new System.Drawing.Point(8, 111);
+			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(186, 13);
+			this.label3.Size = new System.Drawing.Size(246, 17);
 			this.label3.TabIndex = 7;
 			this.label3.Text = "(e.g: namespaceXYZ.classNameXYZ)";
 			// 
 			// txtMethodName
 			// 
-			this.txtMethodName.Location = new System.Drawing.Point(231, 106);
+			this.txtMethodName.Location = new System.Drawing.Point(308, 130);
+			this.txtMethodName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtMethodName.Name = "txtMethodName";
-			this.txtMethodName.Size = new System.Drawing.Size(207, 20);
+			this.txtMethodName.Size = new System.Drawing.Size(275, 22);
 			this.txtMethodName.TabIndex = 3;
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(228, 90);
+			this.label4.Location = new System.Drawing.Point(304, 111);
+			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(118, 13);
+			this.label4.Size = new System.Drawing.Size(157, 17);
 			this.label4.TabIndex = 7;
 			this.label4.Text = "(e.g: methodNameXYZ)";
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(228, 77);
+			this.label5.Location = new System.Drawing.Point(304, 95);
+			this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(148, 13);
+			this.label5.Size = new System.Drawing.Size(199, 17);
 			this.label5.TabIndex = 8;
 			this.label5.Text = "String decryptor method name";
 			// 
@@ -140,37 +153,75 @@
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.txtClassName);
 			this.groupBox1.Controls.Add(this.txtMethodName);
-			this.groupBox1.Location = new System.Drawing.Point(12, 12);
+			this.groupBox1.Location = new System.Drawing.Point(16, 15);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(545, 138);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Size = new System.Drawing.Size(727, 170);
 			this.groupBox1.TabIndex = 9;
 			this.groupBox1.TabStop = false;
 			// 
 			// chkIgnoreEmpty
 			// 
 			this.chkIgnoreEmpty.AutoSize = true;
-			this.chkIgnoreEmpty.Location = new System.Drawing.Point(18, 156);
+			this.chkIgnoreEmpty.Location = new System.Drawing.Point(24, 192);
+			this.chkIgnoreEmpty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.chkIgnoreEmpty.Name = "chkIgnoreEmpty";
-			this.chkIgnoreEmpty.Size = new System.Drawing.Size(120, 17);
+			this.chkIgnoreEmpty.Size = new System.Drawing.Size(158, 21);
 			this.chkIgnoreEmpty.TabIndex = 10;
 			this.chkIgnoreEmpty.Text = "Ignore empty strings";
 			this.chkIgnoreEmpty.UseVisualStyleBackColor = true;
 			// 
+			// numPacks
+			// 
+			this.numPacks.Location = new System.Drawing.Point(323, 192);
+			this.numPacks.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+			this.numPacks.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+			this.numPacks.Name = "numPacks";
+			this.numPacks.Size = new System.Drawing.Size(120, 22);
+			this.numPacks.TabIndex = 11;
+			this.numPacks.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(207, 194);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(110, 17);
+			this.label6.TabIndex = 12;
+			this.label6.Text = "Records in pack";
+			// 
 			// frmMain
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(566, 194);
+			this.ClientSize = new System.Drawing.Size(755, 239);
+			this.Controls.Add(this.label6);
+			this.Controls.Add(this.numPacks);
 			this.Controls.Add(this.chkIgnoreEmpty);
 			this.Controls.Add(this.btnRead);
 			this.Controls.Add(this.groupBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.MaximizeBox = false;
 			this.Name = "frmMain";
 			this.Text = "ConfuserEx Strings Reader (by SalaR)";
 			this.Load += new System.EventHandler(this.frmMain_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numPacks)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -190,6 +241,8 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.CheckBox chkIgnoreEmpty;
+		private System.Windows.Forms.NumericUpDown numPacks;
+		private System.Windows.Forms.Label label6;
 	}
 }
 

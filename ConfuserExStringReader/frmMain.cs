@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+// ReSharper disable ReplaceWithStringIsNullOrEmpty
 
 namespace ConfuserExStringReader
 {
@@ -66,6 +67,7 @@ namespace ConfuserExStringReader
 
 		void ReadStrings()
 		{
+			int packSize = (int) numPacks.Value;
 			try
 			{
 				var assembly = Assembly.LoadFile(txtAssembly.Text);
@@ -85,35 +87,67 @@ namespace ConfuserExStringReader
 				var errorsCount = 0;
 				var codeNum = -1;
 
-				var result = new Dictionary<int, object>();
-				do
-				{
-					codeNum++;
-
-					try
-					{
-						var value = methodInfo.Invoke(null, new object[] {codeNum});
-						if (ignoreEmpty && (value as string) == "")
-							continue;
-
-						result.Add(codeNum, value);
-					}
-					catch (Exception)
-					{
-						errorsCount++;
-					}
-
-
-				} while (errorsCount <= 10);
-
-				var resultStr = JsonConvert.SerializeObject(result, Formatting.Indented);
+				var totalCount = 0;
+				var totalPack = 0;
 
 				var resultFileName = txtAssembly.Text + ".Codes.txt";
-				File.WriteAllText(resultFileName, resultStr);
 
-				MessageBox.Show(result.Count + " strings are read from ConfuserEx'ed assembly", "Success", MessageBoxButtons.OK,
-					MessageBoxIcon.Information);
+				using (var file = File.CreateText(resultFileName))
+				{
+					file.AutoFlush = true;
+					file.Write("[");
 
+					var result = new Dictionary<int, object>();
+					do
+					{
+						codeNum++;
+
+						try
+						{
+							var value = methodInfo.Invoke(null, new object[] { codeNum });
+							var valueStr = value as string;
+							if (ignoreEmpty && valueStr != null && valueStr.Length == 0)
+								continue;
+
+							result.Add(codeNum, value);
+							totalCount++;
+						}
+						catch (Exception)
+						{
+							errorsCount++;
+						}
+
+						if (totalCount % packSize == 0)
+						{
+							var resultStr = JsonConvert.SerializeObject(result, Formatting.Indented);
+							file.WriteLine(resultStr);
+							file.Write(",");
+							file.Flush();
+
+							result.Clear();
+							totalPack++;
+						}
+
+					} while (errorsCount <= 10);
+
+					if (result.Count > 0)
+					{
+						var resultStr = JsonConvert.SerializeObject(result, Formatting.Indented);
+						file.WriteLine(resultStr);
+					}
+					file.Write("{}]");
+				}
+
+				if (totalCount > packSize)
+				{
+					MessageBox.Show(totalCount + " strings are read from ConfuserEx'ed assembly. Json file is packed in " + totalPack + " parts.", "Success", MessageBoxButtons.OK,
+						MessageBoxIcon.Information);
+				}
+				else
+				{
+					MessageBox.Show(totalCount + " strings are read from ConfuserEx'ed assembly", "Success", MessageBoxButtons.OK,
+						MessageBoxIcon.Information);
+				}
 			}
 			catch (Exception ex)
 			{
