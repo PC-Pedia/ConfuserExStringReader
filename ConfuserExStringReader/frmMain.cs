@@ -134,8 +134,11 @@ namespace ConfuserExStringReader
 					{
 						var resultStr = JsonConvert.SerializeObject(result, Formatting.Indented);
 						file.WriteLine(resultStr);
+						file.Write(",{}]");
 					}
-					file.Write("{}]");
+					else{
+						file.Write("{}]");
+					}					
 				}
 
 				if (totalCount > packSize)
